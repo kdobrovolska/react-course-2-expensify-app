@@ -18,12 +18,6 @@ export const Dispatch =(action)=>
     store.dispatch(action);
 }
 
-////const expenses=AddExpense({description:'water bill', createdAt:2007, amount:600});
-//store.dispatch(expenses);
-
-//store.dispatch(AddExpense({description:'coffe bill', createdAt:9007, amount:6}));
-//store.dispatch(AddExpense({description:'gas bill', createdAt:207, amount:99}));
-//store.dispatch(UpdateTextFilter('coffe'));
 const state=store.getState();
 console.log(getVisibleExpenses(state.expenses,state.filters));
 setTimeout(()=>{
