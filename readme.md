@@ -5,4 +5,5 @@ git log
 git status 
 
 ///////////
-git remote  - to GitHub
+git remote  - look to GitHub
+git push  - send changes to GitHub
