@@ -3,3 +3,6 @@ git add .       //all files
 git commit -m "message"
 git log
 git status 
+
+///////////
+git remote  - to GitHub
