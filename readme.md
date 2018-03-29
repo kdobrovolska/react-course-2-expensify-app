@@ -7,3 +7,7 @@ git status
 ///////////
 git remote  - look to GitHub
 git push  - send changes to GitHub
+git push heroku master
+
+heroku logs     -log file of heroku
+heroku open     - start application
