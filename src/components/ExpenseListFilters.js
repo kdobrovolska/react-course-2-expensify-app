@@ -29,7 +29,7 @@ export class ExpenseListFilters extends React.Component
     }
     render()
     {
-        alert('START_DATE='+START_DATE);
+       // alert('START_DATE='+START_DATE);
         return <div>
         <h1>Filter: </h1>
         <input type='text' value={this.props.filter.text} onChange={this.onTextChange}  />

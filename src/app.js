@@ -10,13 +10,16 @@ import {AddExpense} from  './actions/expenses.js'
 import {UpdateTextFilter} from './actions/filters.js'
 import getVisibleExpenses from './selectors/expenses.js'
 
+
+console.log('test');
 const store=ConfigureStore();
 console.log(store.getState());
 export const Dispatch =(action)=>
 {
-    alert('dispatch');
+   // alert('dispatch');
     store.dispatch(action);
 }
+
 
 const state=store.getState();
 console.log(getVisibleExpenses(state.expenses,state.filters));
