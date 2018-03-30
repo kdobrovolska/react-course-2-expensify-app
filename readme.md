@@ -38,3 +38,8 @@ yarn install --production
 //(after deleting node_modules)
 yarn install
 
+//start testing
+1) yarn test   - one time
+2) yarn test --watch    - one start and after that when changes were made
+3) yarn run -- --watch - start only if changes were made
+4) yarn test -u      delete old snapshot
