@@ -8,11 +8,11 @@ export default (state=expenseReducerDefaultState,action)=>{
         case 'REMOVE_EXPENCE':
               return state.filter(({id})=>{return id!=action.expenseID});
         case 'EDIT_EXPENCE':
-        alert('id='+action.expenseID);
+     //   alert('id='+action.expenseID);
            return state.map((item)=>{
                if(item.id===action.expenseID)
                {
-                   alert(action.expense.description);
+                  // alert(action.expense.description);
                    return {...item,...action.expense, id:action.expenseID}
                }
                else
