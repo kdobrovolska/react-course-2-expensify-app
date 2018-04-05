@@ -14,10 +14,16 @@ git remote  - look to GitHub
 git push  - send changes to GitHub
 
 //heroku (heroku password => Lika1987!!)
-heroku login 
-git push heroku master    (send data to heroku)
-heroku logs     -log file of heroku
-heroku open     - start application
+1)heroku login 
+2)git push heroku master    (send data to heroku)
+3)heroku logs     -log file of heroku
+4)heroku open     - start application
+5)heroku config:set  FIREBASE_API_KEY=AIzaSyDlc2Kdek065jRsLG8ia05sy4eKHt8uetY  FIREBASE_AUTH_DOMAIN=expensify-b3796.firebaseapp.com    FIREBASE_DATABASE_URL=https://expensify-b3796.firebaseio.com    FIREBASE_PROJECT_ID=expensify-b3796    FIREBASE_STORAGE_BUCKET=expensify-b3796.appspot.com    FIREBASE_MESSAGING_SENDER_ID=147317392471
+     
+     to connect to database (data from file .env.development)
+
+6) heroku config  - to look configuration
+7) heroky config:unset KEY  - to delete KEY from configuration
 
 
 //to work with production version:

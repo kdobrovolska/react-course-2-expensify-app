@@ -9,7 +9,8 @@ import 'react-dates/lib/css/_datepicker.css';
 import {AddExpense} from  './actions/expenses.js'
 import {UpdateTextFilter} from './actions/filters.js'
 import getVisibleExpenses from './selectors/expenses.js'
-
+import'./firebase/firebase'; 
+//import'./playground/promises'; 
 
 console.log('test');
 const store=ConfigureStore();
