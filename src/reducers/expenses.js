@@ -5,6 +5,8 @@ export default (state=expenseReducerDefaultState,action)=>{
     switch(action.type){
         case 'ADD_EXPENCE':
             return [...state,action.expense];
+        case 'SET_EXPENSES':
+            return action.expenses;    
         case 'REMOVE_EXPENCE':
               return state.filter(({id})=>{return id!=action.expenseID});
         case 'EDIT_EXPENCE':

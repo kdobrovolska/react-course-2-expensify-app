@@ -33,3 +33,9 @@ test('expenses reducer add expenses ', ()=>{
     expenseID:expenses[0].id, expense:expenses[2]});
     expect(result).toEqual([{...expenses[2],id:expenses[0].id},expenses[1], expenses[2]]);
   }); 
+
+  test('expenses reducer set expenses ', ()=>{
+    const result =ExpenseReduser([expenses[0],expenses[1]],{type:'SET_EXPENSES',
+    expenses});
+    expect(result).toEqual(expenses);
+  }); 

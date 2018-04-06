@@ -19,9 +19,9 @@ export const startAddExpense=(expenseData={})=>{
             description=0,
             note='',
             amount=0,
-            createAt=0
+            createdAt=0
         } = expenseData;
-        const expense={description, note, amount, createAt};
+        const expense={description, note, amount, createdAt};
         return database.ref('expenses').push(expense).then((ref) => { 
             const pp='expenses'+'/'+ref.key;
             console.log('push.then::'+database.ref(pp));
@@ -45,3 +45,22 @@ export const EditExpense=(id, updates={})=>(
         expense: updates
     }
 );
+
+export const SetExpenses=(expenses)=>(
+    {
+        type:'SET_EXPENSES',
+        expenses
+    });
+
+ 
+export const startSetExpenses=()=>{
+    return  (dispatch) => {
+        const expensesNew=[];
+        return database.ref('expenses').once('value').then((snapshot) => { 
+            snapshot.forEach((snapshotChild)=>{
+                expensesNew.push({id:snapshotChild.key,...snapshotChild.val()});
+            });
+            dispatch(SetExpenses(expensesNew));
+        });
+    }
+}   
