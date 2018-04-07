@@ -38,6 +38,15 @@ export const RemoveExpense=(id)=>(
         expenseID:id
     }
 );
+
+export const startRemoveExpense=(id)=>{
+    return  (dispatch) => {
+        return database.ref('expenses/'+id).remove().then(() => { 
+            dispatch(RemoveExpense(id));
+        });
+    }
+}  
+
 export const EditExpense=(id, updates={})=>(
     {
         type:'EDIT_EXPENCE',
@@ -45,6 +54,21 @@ export const EditExpense=(id, updates={})=>(
         expense: updates
     }
 );
+
+export const startEditExpense=(id, updates={})=>{
+    return  (dispatch) => {
+        const {
+            description=0,
+            note='',
+            amount=0,
+            createdAt=0
+        } = updates;
+        return  database.ref('expenses/'+id).update({description,
+            note, amount, createdAt}).then(() => { 
+            dispatch(EditExpense(id,updates));
+        });
+    }
+}  
 
 export const SetExpenses=(expenses)=>(
     {
@@ -64,3 +88,5 @@ export const startSetExpenses=()=>{
         });
     }
 }   
+
+ 
