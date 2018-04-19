@@ -10,6 +10,7 @@ import {startSetExpenses} from  './actions/expenses.js'
 import {login, logout} from './actions/auth.js'
 import getVisibleExpenses from './selectors/expenses.js'
 import {firebase} from './firebase/firebase'; 
+import LoadingPage from './components/LoadingPage'; 
 //import'./playground/promises'; 
 
 console.log('test');
@@ -37,7 +38,7 @@ const renderApp=()=>{
         hasRendered=true;
     }
 };
-ReactDOM.render(<p> Loading ...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 
 firebase.auth().onAuthStateChanged((user)=>{
@@ -48,7 +49,7 @@ firebase.auth().onAuthStateChanged((user)=>{
             renderApp();
             if(history.location.pathname=== '/')
             {
-                alert('to dashboard');
+              //  alert('to dashboard');
                 history.push('/dashboard');
             }
        });

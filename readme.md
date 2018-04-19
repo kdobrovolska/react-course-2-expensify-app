@@ -49,3 +49,23 @@ yarn install
 2) yarn test --watch    - one start and after that when changes were made
 3) yarn run -- --watch - start only if changes were made
 4) yarn test -u      delete old snapshot
+
+
+
+-----------------------
+start to work with github
+1) in google.com 
+     "connect to GitHub with ssh"
+2) execut instructions
+3)in console:
+-->git remote add origin ...
+  (SSH for instance - git@github.com:kdobrovolska/ReactReduxTablesApp.git)
+4)check 1:
+   --> git remote
+   should be : origin
+5)check 2:
+--> git remotem -v
+
+6) create master branch  (only first time)
+-->git push -u origin master
+

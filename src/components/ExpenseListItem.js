@@ -7,17 +7,22 @@ import numeral from 'numeral'
 //import {Dispatch} from '../app.js'
 
 export const ExpenseListItem=({dispatch ,id,description, createdAt,amount})=>
-{
+(
    // alert('createdAt'+createdAt);
-    const mom=moment(createdAt).format('MMM Do, YYYY');
+   // const mom=moment(createdAt).format('MMM Do, YYYY');
   //  alert('mom='+mom);
-    return <div>
-    <h3><Link to={'/edit/'+id}> {description}</Link></h3>
-    <h1> Item ID={id}</h1>
-    <h3> Created At:{mom}</h3>
-    <h3> Amount:{numeral(amount/100).format('$0,0.00')}</h3>
-    </div>
-};
+  <Link className='list-item' to={'/edit/'+id}>
+
+      <div className='list-item__title'>
+          <h3> {description}</h3>
+          <span className='list-item__sub-title'>{moment(createdAt).format('MMM Do, YYYY')} </span>
+      </div>
+    
+    
+    <h3 className='list-item__data'> {numeral(amount/100).format('$0,0.00')}  </h3>
+  
+  </Link> 
+);
 
 
 export default connect()(ExpenseListItem);
